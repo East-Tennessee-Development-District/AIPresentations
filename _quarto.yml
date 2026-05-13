@@ -1,0 +1,20 @@
+project:
+  output-dir: _output
+
+bibliography: commonFiles/references.bib  
+csl: commonFiles/chicago-notes-intext-bibliography-access-dates.csl
+format: 
+  revealjs:
+    theme: commonFiles/custom.scss
+    css: commonFiles/custom.css
+    incremental: true
+    reference-location: document
+    slide-number: true
+    show-slide-number: print
+    show-notes: true
+    embed-resources: true   
+    subtitle: "What you need to know"
+    fragment-in-url: true
+    pdf-separate-fragments: true
+    author-meta: "Killian Cimino"
+    logo: assets/ETDDLogo.svg

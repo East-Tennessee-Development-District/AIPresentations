@@ -1,11 +1,11 @@
 ---
 title: "AI Policy"
 bibliography: references.bib
-csl: chicago-notes-intext-bibliography-access-dates.csl
+csl: ../commonFiles/chicago-notes-intext-bibliography-access-dates.csl
 format: 
   revealjs:
-    theme: custom.scss
-    css: custom.css
+    theme: ../commonFiles/custom.scss
+    css: ../commonFiles/custom.css
     incremental: true
     reference-location: document
     slide-number: true
@@ -818,7 +818,7 @@ Not having a policy could make you more vulnerable to:
 - Ask for a copy of our policy by emailing kcimino@etdd.org
 
 
-<embed title="ETDD's Policy" src="../ETDDAIPolicy.pdf" width="100%" height="70%" />
+<embed title="ETDD's Policy" src="../commonFiles/ETDDAIPolicy.pdf" width="100%" height="70%" />
 
 
 ## {data-menu-title="Questions?"}

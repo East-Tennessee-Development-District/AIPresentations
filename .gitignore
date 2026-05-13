@@ -1,6 +1,8 @@
 # Policies
 ETDD*AIPolicy*.docx
 ETDD*AIPolicy*.pdf
+# misc files
+presentationFeedbackForm.pdf
 # History files
 .Rhistory
 .Rapp.history
@@ -50,3 +52,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+/.quarto/
+**/*.quarto_ipynb

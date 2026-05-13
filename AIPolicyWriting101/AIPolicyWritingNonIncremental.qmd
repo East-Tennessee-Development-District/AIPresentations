@@ -1,0 +1,845 @@
+---
+title: "AI Policy"
+bibliography: references.bib
+csl: chicago-notes-intext-bibliography-access-dates.csl
+format: 
+  pptx: 
+    logo: ../../assets/ETDDLogo.svg
+    subtitle: "What you need to know"
+    author-meta: "Killian Cimino"
+    
+  revealjs:
+    theme: custom.scss
+    css: custom.css
+    incremental: false
+    reference-location: document
+    slide-number: true
+    show-slide-number: print
+    show-notes: false
+    embed-resources: true   
+    subtitle: "What you need to know"
+    fragment-in-url: true
+    pdf-separate-fragments: true
+    author-meta: "Killian Cimino"
+    logo: ../../assets/ETDDLogo.svg
+editor: source
+---
+
+## What we'll cover:
+
+::: nonincremental
+-   What AI is
+-   Examples of AI in your life
+-   How AI works (conceptually)
+-   ETDD's Policy (what and why)
+-   Examples of how to put this information into action
+:::
+
+## Goals for this Presentation
+
+::: {.nonincremental style="font-size: 95%;"}
+-   Understand at a basic level what AI is
+-   Understand that there are different kinds of AI models
+-   Understand different AI models are appropriate for different tasks
+-   Be able to apply this information to using AI or writing an AI policy
+-   Understand how ETDD's policy addresses potential issues and be able to adapt for your organization
+-   Have a basis for further learning
+:::
+
+## What Is AI?
+
+::::::{.columns .r-stretch}
+::::{.column width=40% height=100%}
+:::{.darkbg .v-center-container .center }
+How would you define AI?
+:::
+::::
+
+
+:::::{.column width=60%}
+:::: {.v-center-container .center}
+:::fragment
+"AI is whatever hasn't been done yet." — Tesler's Theorem^[According to Tesler, he originally said “Intelligence is whatever machines haven’t done yet”, however Tesler’s Theorem is more well known (source: @teslersTheorem)]
+:::
+::::
+:::::
+::::::
+
+::: notes
+Larry Tesler was a computer scientist who worked in the Stanford Artificial Intelligence Laboratory (and later pioneered copy and paste as we know them today)
+:::
+
+## Defining AI
+
+-   How do you define "Intelligence"?
+-   Academic definitions differ and are not always helpful for practical use
+
+
+|   | Human-based | Ideal Rationality |
+|------------------|----------------------------|---------------------------|
+| Reasoning-based | Systems that think like humans | Systems that think rationally |
+| Behavior-based | Systems that act like humans | Systems that act rationally|
+
+: AI Definition Overview^[@sep-artificial-intelligence]
+
+::: notes
+In general, it's somewhat common to not have clear definitions in academic fields because it's difficult to create a definition that covers everything it should while excluding everything else. As an exercise after this presentation, try to define a 'chair' in a way that would include e.g. beanbag chairs, but not horses. AI does have a harder time with the definition of the field in part because as a field it interacts with computer science, statistics, philosophy, neurology, neurocomputation, and other fields. Depending on one's focus, AI can be interpreted in wildly different ways, and that's without accounting for academic vs common-use definitions.
+:::
+
+## Defining AI
+
+AI is "an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI systems are designed to operate with varying levels of autonomy"^[@aiRMF]
+
+
+
+::: notes
+This is the definition we're using at ETDD
+
+:::
+
+## Defining AI
+
+Questions to help determine if it's AI:
+
+-   Does the technology use data to provide predictions, recommendations, insights, or decisions?
+-   Does the technology augment or replace human decision-making?
+-   Does the company use words such as “personalized”, “tailored”, and “adaptive” in its marketing?
+-   Would it be difficult or impossible to write out how a program does what it does, either because the process is opaque or because it is mathematically complex? ^[@sanJoseAI]
+
+::: notes
+These are in ETDD's AI policy. If the answer is yes to any of them, you should treat it as AI until told otherwise.
+:::
+
+## Examples of AI
+::::::{.columns .r-stretch}
+::::{.column width=40% height=100%}
+:::{.darkbg .v-center-container .center }
+What are some examples of AI you interact with on a regular basis?
+:::
+::::
+
+
+:::::{.column width=60%}
+:::: {.v-center-container .center}
+::: {.fragment .fade-in-then-out}
+![](../../assets/ocr.png){.absolute top="25%" right="15%" height="400" width="300"} [Optical Character Recognition]{.absolute top="90%" right="5%"}
+:::
+::: {.fragment .fade-in-then-out}
+![](../../assets/videoGames.png){.absolute top="30%" right="5%" width="500" height="300"} [Video Games^[@AIVideoGames, see page 266.  Image from: @Namco_2024]]{.absolute top="90%" right="15%"}
+:::
+::: {.fragment .fade-in-then-out}
+![](../../assets/spamFilter.png){.absolute top="30%" right="5%" width="500" height="300"} [Spam Filters^[Image from: @spam ]]{.absolute top="90%" right="15%"}
+:::
+::::
+:::::
+::::::
+
+## How AI Works Conceptually
+
+- Understanding the different kinds can help you know when and how to use AI
+
+```{dot}
+digraph G{
+
+center=true
+bgcolor="transparent"
+
+node [color="#015a71", fontcolor="#015a71", fillcolor="white", style="filled"]; AI; Logistic; NonLogistic; Probabilistic; Neurocomputational 
+
+AI -> Logistic [color = "#015a71"]
+AI -> NonLogistic [color = "#015a71"]
+
+NonLogistic -> Probabilistic [color = "#015a71"]
+NonLogistic -> Neurocomputational [color = "#015a71"]
+
+}
+
+
+```
+
+
+------------------------------------------------------------------------
+
+Lets say you need an AI to help organize some recipes:
+
+:::::::::::::::::::::: columns
+::::::::: {.column width="40%"}
+:::: {.fragment .highlight-current-blue fragment-index="4"}
+::: {.fragment .semi-fade-out fragment-index="5"}
+Logicist AI
+:::
+::::
+
+:::: {.fragment .highlight-current-blue fragment-index="6"}
+::: {.fragment .semi-fade-out fragment-index="7"}
+Probabilistic AI
+:::
+::::
+
+:::: {.fragment .highlight-current-blue fragment-index="10"}
+::: {.fragment .semi-fade-out}
+Neurocomputational AI
+:::
+::::
+:::::::::
+
+:::::::: {.column width="20%"}
+:::: {.fragment fragment-index="1"}
+::: {.fragment .fade-out fragment-index="7"}
+![](../../assets/recipeCard.png)
+:::
+::::
+
+:::: {.fragment fragment-index="5"}
+::: {.fragment .fade-out fragment-index="7"}
+![](../../assets/recipeCard.png) ![](../../assets/recipeCard.png)
+:::
+::::
+
+::: {.fragment fragment-index="7"}
+![](../../assets/recipeCard.png){.absolute top="80" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="130" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="180" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="230" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="280" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="330" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="380" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="430" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="480" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="530" right="40%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="80" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="130" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="180" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="230" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="280" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="330" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="380" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="430" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="480" right="50%" width="50" height="30"} ![](../../assets/recipeCard.png){.absolute top="530" right="50%" width="50" height="30"}
+:::
+::::::::
+
+::::: {.column width="20%"}
+::: {.fragment fragment-index="2"}
+![](../../assets/robot.png)
+:::
+
+::: {.fragment fragment-index="8"}
+![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"} ![](../../assets/robot.png){width="60" height="100"}
+:::
+:::::
+
+::::: {.column width="20%"}
+::: {.fragment fragment-index="3"}
+![](../../assets/cakeRecipeBox.png) ![](../../assets/notCakeRecipeBox.png)
+:::
+
+::: {.fragment fragment-index="9"}
+![](../../assets/cake.png) ![](../../assets/notCake.png)
+:::
+:::::
+::::::::::::::::::::::
+
+::: notes
+Think of logicist artificial intelligence as a series of rules. If you know all of your cake recipes are made with flour and butter and are cooked at 350 degrees, and none of your non cake are you can give that rule to an AI who can sort them based on the logic you gave it.
+
+Think of probabilistic AI as showing a model a bunch of recipes labeled 'cake' and 'not cake' with notes on each ingredient; once it is trained you can show it a recipe and it'll say how likely it is a recipe for cake or not
+
+Think of "neurocomputational" as having a bunch of robots working in groups. You can show them a bunch of recipes, and each group will work to figure out one part of what makes a recipe. You can then ask them to label something as cake or not, or even potentially ask them to give you a new cake recipe. They could be super accurate (maybe they figured out some cakes are made with almond flour), or could be really off (they could think a recipe for wet cement is cake), because they don't have the context to know what cake is, and aren't good at telling you what they do / look at.
+:::
+
+## Real Life Examples of Each Kind of AI
+::::::{.columns .r-stretch}
+:::::{.column width=40% height=100%}
+::::{.darkbg .center }
+::: {.fragment .highlight-current-red fragment-index="4"}
+Logicist
+:::
+
+::: {.fragment .highlight-current-red fragment-index="6"}
+Probabilistic
+:::
+
+::: {.fragment .highlight-current-red fragment-index="2"}
+Neurocomputational
+:::
+::::
+:::::
+
+::::::{.column width=60%}
+::::: {.v-center-container .center}
+:::: {.fragment .fade-in fragment-index="1"}
+::: {.fragment .fade-out fragment-index="3"}
+![](../../assets/ocr.png){.absolute top="25%" right="15%" height="400" width="300"} [Optical Character Recognition]{.absolute top="90%" right="5%"}
+:::
+::::
+:::: {.fragment .fade-in fragment-index="3"}
+::: {.fragment .fade-out fragment-index="5"}
+![](../../assets/videoGames.png){.absolute top="30%" right="5%" width="500" height="300"} [Video Games^[@Namco_2024]]{.absolute top="90%" right="15%"}
+:::
+::::
+::: {.fragment .fade-in fragment-index="5"}
+![](../../assets/spamFilter.png){.absolute top="30%" right="5%" width="500" height="300"} [Spam Filters^[Image from: @spam]]{.absolute top="90%" right="15%"}
+:::
+::::
+:::::
+::::::
+
+
+::: notes
+Lots of video games use expert systems to tell NPCs what to do. For example, in Skyrim NPCs have to know where to walk without someone controlling them, how do they do that? How do NPCs know if they should try to fight the dragon, or run away?
+
+Unfortunately, spam emails don't usually tell you they're spam, so how can spam filters work? It would take hours and hours of manual work to create rules that would work for the spam I get on my work email and my personal email, much less that would be mostly accurate for most people. This is somewhere ML excels- select an appropriate model, give it labelled data, and it can create rules to catch most spam.
+
+Optical Character Recognition is used to e.g. add words to scanned PDFs. It's usually based on Neural nets, which are especially good at computer vision
+:::
+
+## 
+
+|   | Logicist | Probabilistic | Neurocomputational |
+|----------------|----------------|--------------------|--------------------|
+| good for: | clearly defined logic | clear factors | No clear process |
+| bad at: | handling uncertainty | operating with limited /bad data or assumptions | Truth; Explainability |
+| example: | email inbox rules | (some) population forecasting | chatGPT |
+
+: AI Model Type Overview {tbl-colwidths="\[25,25,25,25\]"}
+
+::: notes
+Could be good opportunity to bring up forecasting difficulties
+:::
+
+## Quick Clarifications
+
+-   AI is not just Large Language Models^[@genAIVsOther]
+-   AI is not new^[@Chugani_2025]
+-   It is still valuable to learn new skills
+
+::: notes
+
+AI history = booms and busts
+
+:::
+
+## Quick Advice for Using AI
+
+-   Don't use AI search results without verifying them
+-   If you use chat bots:
+    -   Give them context in your prompt
+    -   Try different prompting strategies (e.g. say "you are an X", be nice)
+-   Don't forget the sunk cost fallacy^[@sunkCost]
+-   Sometimes older methods are better
+
+::: notes
+AI is not a replacement for verified sources- the little robots know what a fact looks like, not what is true or not. If you e.g. look up statistics with ChatGPT, the robots will give you something that looks accurate, but you will have to double check with a reputable source (probably data.census.gov). If someone builds an AI tool that will pull census data, the source is not the tool the source will be wherever the tool gets the data from (likely data.census.gov) but you should still double check because mistakes can happen when coding things like that.
+
+Currently, there is not clear evidence that certain strategies are universally helpful with all tasks for any given LLM model, and the models are changing at a fast enough pace that a strategy that works now might not a month from now. Instead, try different strategies to see which seems to get you what you want. Some strategies include being polite in how you word the prompt, including in your prompt something like "You are a planner,", and prompting it to "think step by step". This last one will use more resources, and is not always effective, so use it sparingly.
+
+It can be easy to spend more time trying to do something an 'easy' way than you would doing it the 'hard' way. I have a tendency to do this, and what I've found helpful is setting a timer for a quarter or half as long as I think it'd take to do the hard way and switching to the hard way if I'm not done in that time.
+
+AI is the new cool shiny toy that's suddenly everywhere, and it can be exciting to use new tech (or old tech with a new coat of paint). It's not always the most effective or easiest way to do things even if it feels like it is.
+
+As a general rule, people tend to trust or rely on things that are 'automated' more than they should. This can include even things like trusting information you get from AI more than an expert because most LLMs are really good at sounding confident even when they're wrong (like a lot of people on the internet), but it can also include not being as thorough when you fact check things you get from AI because it feels more trustworthy. This is part of why you have to check any information with verified sources (also because the little robots don't understand what a 'fact' is). If a model produces a bad result (e.g. bad image, inaccurate transcript, inaccurate information), you are responsible for anything that happens if you use it. AI is a tool and you are using it, it is not autonomous (yet)
+
+If I create a website for online shopping, and you judge it based on whether or not it lists states with the letter "R" in their name, that's not really fair unless my website is the "states with the letter "R" in their name shop"
+
+If you need specific wording or existing data, probabilistic AI is not going to be appropriate. If you want to organize pdfs, probabilistic AI is more likely to work (unless you have a good file naming scheme) because it can create rules to determine which files are similar to one another.
+
+There are times where AI is not the best solution. If you want to check the accessibility of a website, there is a lot you can do with automation (e.g. color contrast), but some of it is easier to just check than try to create AI for (full screen-reader compatibility).
+:::
+
+## 
+
+:::::{.columns .r-stretch}
+::::{.column width=40% height=100%}
+:::{.darkbg .v-center-container .center }
+Think about any potential questions:
+:::
+::::
+
+
+::::{.column width=60%}
+::: {.v-center-container .center}
+1. Any questions you have about AI
+2. Why an AI Policy is important
+3. Anything specific you're not sure how to handle
+:::
+::::
+:::::
+
+
+
+
+## Why an AI policy is imporant
+
+- More people want to use AI
+- Many people don't know how to responsibly use AI
+- Some AI is cutting edge technology treated as traditional software
+- Rapid changes in legal and technical realms
+- A well-written policy can save you time and headaches later
+
+## ETDD's Policy Outline
+
+::::{.etddBulletPoint}
+-   Introduction
+-   Guiding Principles
+-   Roles And Responsibilities
+-   Definitions
+-   General Information (and special notes)
+-   Processes to review AI requests, sunset tools
+-   Enforcement
+
+::::
+
+::: notes
+A copy of ETDD's policy is at the end of this presentation
+:::
+
+## Rapid Changes
+:::::{.callout-important}
+## *Policy Considerations*
+
+-   Legal^[@otterLegal, @wiretap]
+-   Technical
+    -   Unique hacking vectors^[@owaspLLM]
+    -   Coding^[@owaspBlindTrust; @nvidiaCodeExecution]
+-   Consumer-Facing
+
+:::::
+
+## Rapid Changes
+:::: {.etddBulletPoint .callout-tip}
+## *ETDD's Policy*
+
+-   Guiding Principles
+-   Focus on flexible processes and risk assessments
+-   Specific as needed (e.g. AI Note takers, generating code)
+-   Separate Generative AI Policy
+-   Updating regularly
+
+::::
+::: notes
+"When possible, alternatives to generative AI will be considered, either as preferable products or as potential alternatives in the event we are no longer able to use our current tools."
+:::
+
+## Lack of Accessible Information
+:::::{.callout-important}
+## *Policy Considerations*
+
+-   Most information is very polarized
+-   Most tools don't tell you how they work^[@spellCheckAI; @grammarAI; @mozillaTransparancy; @foundationModelIndex; ]
+  -   Difficult to know if something will do what it says
+  -   Difficult to know if something has unstated risks
+-   Lots of start ups
+
+:::::
+
+:::notes
+https://workspace.google.com/blog/productivity-collaboration/everyday-ai-beyond-spell-check-how-google-docs-is-smart-enough-to-correct-grammar https://www.clrn.org/is-spell-check-ai/#A_Deep_Dive_into_the_Algorithms
+:::
+
+## Lack of Accessible Information
+:::: {.callout-tip .etddBulletPoint}
+## *ETDD's Policy*
+
+-   Guiding Principles help indicate how and why
+-   AI Training is required
+-   AI Request process
+  -   Risk Assessments
+-   Transparency
+
+::::
+
+::: notes
+Generative AI can be a wonderful tool, but it does have limitations. Staff at ETDD will only use generative AI for uses they have had approved, and if they request to use it for inappropriate uses (e.g. data analysis), alternatives will be provided. One area where generative AI is typically weak is when it comes to facts. To ensure the usage of AI is effective, staff will always check facts and cite reputable sources for any facts. Staff will not use generative AI to gather statistics or perform data analysis. Staff can use it to get an overview of a topic but must check any information they learn with a reliable source before applying that knowledge at ETDD. Staff can also use it as a search engine if they struggle to get the results they need from a traditional search engine, but they must then verify the information with a reputable source.
+
+partially to account for not reading privacy policy and for AI all being called one thing)
+:::
+
+## Public Opinion
+:::{.callout-important}
+## *Policy Considerations*
+-   Public opinion divided^[@Pasquini_2025]
+  -   Difficult to know potential consequences on relationships
+-   Plagiarism^[Most of the studies right now are focused on academia, but we can extrapolate from these studies that what is or is not plagiarism with regards to AI is not settled. Here is one study @Chan_2025]
+:::
+
+## Public Opinion
+:::: {.etddBulletPoint .callout-tip}
+## *ETDD's Policy*
+
+-   Proactively disclose our use of generative AI
+-   Cite usage as appropriate
+-   Avoid certain high-risk use cases
+-   Most Risk Assessments consider this 
+::::
+
+## Privacy and Data Concerns
+:::::{.callout-important}
+## Policy Considerations
+-   AI Note Takers^[@wiretap]
+-   Data leaks
+  - Sensitive Information leaks^[@copilotBugConfidential]
+-   FOIA
+
+:::::
+
+## Privacy and Data Concerns
+::::{.etddBulletPoint .callout-tip}
+## *ETDD's Policy*
+-   Don't put information not ready for public in generative AI
+-   Always ask for consent before using an AI Note Taker
+
+::::
+
+::: notes
+
+:::
+
+## Lack of Resources Tailored for Development Districts
+
+:::{.callout-important}
+## *Policy Considerations*
+
+-   Difficult to find relevant trainings
+-   Difficult to find resources on AI policies
+    - Most is aimed at people who are developing AI
+-   Time sink
+
+:::
+
+:::notes
+Because resources for development districts don't already exist, you will have to create ones from scratch. However you decide to write and implement an AI Policy, keep in mind it will take time. For example, when I recieve an AI request I have to spend time to figure out how someone is planning on using AI, why they're using it, if the tool they are requesting is appropriate both for what they want and for us to use, then if it's not I have to provide an alternative. If you want to provide blanket tools and uses you might spend time approving tools people don't want or later having to figure out who is using it and how to handle it if there is an issue with the tool.
+At ETDD we approve things at the level of per person per tool per Use Case, in part to avoid wasting time researching tools for functions that haven't been requested and to make sure people know what the policy is.
+:::
+
+## Lack of Resources Tailored for Development Districts
+:::{.callout-tip .etddBulletPoint}
+## *ETDD's Policy*
+-   Hire a nerd
+    -   (Who will include helpful resources at the end of this presentation)
+
+:::
+
+## Putting Guiding Principles into Policy
+:::{.callout-important}
+## *Policy Considerations*
+- Translating Guiding Principles into policy is hard
+:::
+
+## Putting Guiding Principles into Policy
+:::{.callout-tip .etddBulletPoint}
+## *ETDD's Policy*
+Example using Effectiveness:
+
+- AI is *a* tool not *the* tool
+  - No data analysis with generative AI
+- Automation Bias^[@Romeo_Conti_2026]
+- Resource Use^[@Explained_2025]
+
+:::
+
+## Citing Generative AI {.scrollable .hidden}
+
+| Level of Use | Citation Required | Example |
+|----|----|----|
+| Fully AI Generated with no editing | Not Allowed |  |
+| Fully generative AI with minimal editing | “This \[document type\] was drafted with \[generative AI model\], and fact-checked and edited by ETDD staff” | “These meeting notes were drafted with CoPilot, and fact-checked and edited by ETDD staff” |
+|  A mixture of generative AI and original writing: |  “Some parts of this \[document\] were drafted with \[generative AI model\], and fact-checked and edited by ETDD staff” | “some parts of this plan were drafted with govAI, and fact- checked and edited by ETDD staff” |
+| Drafted with generative AI but fully edited | “\[Parts of\] this \[document type\] were drafted with \[ Generative AI model\], but the content has been written and edited by ETDD staff” | “Parts of this agenda were drafted with CoPilot, but the content has been written and edited by ETDD staff” |
+| If it is just edited (especially for a specific quality) with generative AI | “Parts of this \[document type\] were edited using \[ Generative AI model\] for \[quality\]” | “Parts of this email were edited using ChatGPT for tone” |
+|  |  |  |
+
+## Practical Advice for Policies
+
+- Be prepared for technical issues
+-   Adapt for your organization
+-   Consider how this might fit with other policies
+  -   AI is not always traditional software
+-   Try to provide alternatives
+
+::: notes
+-   E.g. AI is often not just on your computer, most of the user-facing options are also online, so a policy about downloading things will have low relevance
+- Decide your risk level and how to handle things- I tend towards more cautious approaches because I am used to a production environment; you might feel differently
+:::
+
+
+
+## Putting It In Action / Hypotheticals
+
+##
+
+:::::::{.columns}
+:::::{.column width=60% height=100%}
+::::{.darkbg .v-center-container .center }
+Let's say you want to create an AI policy, and you just want to have the bare minimum to prevent likely issues. What do you think some of the content you would want in the policy would be? What would be the pros and cons of doing it this way?
+
+:::::
+::::::
+
+::::::{.column width=40% .smaller-text}
+Potential Content:
+
+::::nonincremental
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- What AI can be used for
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- How tools are approved
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- How (or if) you will cite your usage of AI
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- How you will handle certain high-risk use cases
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="5"}
+- Other content?
+::::
+:::::
+:::::::
+::::::::
+##
+
+:::::::{.columns}
+:::::{.column width=60% height=100%}
+::::{.darkbg .v-center-container .center }
+Let's say you want to create an AI policy, and you just want to have the bare minimum to prevent likely issues. What do you think some of the content you would want in the policy would be? What would be the pros and cons of doing it this way?
+
+:::::
+::::::
+
+::::::{.column width=40% .smaller-text}
+Pros:
+
+::::nonincremental
+
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Might be easier to write and follow
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Allow for staff more freedom to choose how/if to use AI
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Clearer instructions
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Might need to be updated less frequently
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="5"}
+- Other pros?
+::::
+:::::
+:::::::
+::::::::
+
+##
+:::::::{.columns}
+:::::{.column width=60% height=100%}
+::::{.darkbg .v-center-container .center }
+Let's say you want to create an AI policy, and you just want to have the bare minimum to prevent likely issues. What do you think some of the content you would want in the policy would be? What would be the pros and cons of doing it this way?
+
+:::::
+::::::
+
+::::::{.column width=40% .smaller-text}
+Cons:
+
+::::nonincremental
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Might not cover everything you need
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Might need to be updated more frequently
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Might not provide enough guidance
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Might increase the risk of misuse of AI
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="5"}
+- Other cons?
+::::
+:::::
+:::::::
+::::::::
+
+
+
+##
+
+::::::{.columns}
+::::{.column width=60% height=100%}
+:::{.darkbg .v-center-container .center }
+Let's say you wrote in your AI policy that you only had to approve each tool once, and then it was fine to use for everyone. What are some potential risks with this approach?
+::::
+:::::
+
+:::::{.column width=40% .smaller-text}
+::::nonincremental
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Approving tools for inappropriate use cases
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Not approving specialized tools
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Inaccurately assessing risks of a tool
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Scrambling if there is a change in a tool
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="5"}
+- Other risks?
+::::
+:::::
+::::::
+:::::::
+##
+
+:::::::{.columns}
+::::{.column width=60% height=100%}
+:::{.darkbg}
+Let's say a grant writer uses generative AI like Copilot to write a grant. How might they decide to use it?
+
+Let's say the grant was not funded, and the community is upset. If you had an AI policy that outlined how you used AI, how could that protect you?
+If you did not have an AI policy, what might you be vulnerable to?
+::::
+:::::
+
+::::::{.column width=40% .smaller-text}
+They might use it by:
+
+::::nonincremental
+
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Editing their work
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Asking it for statistics
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Creating a sample of the grant
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Creating an outline
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="5"}
+- Create the grant and not edit it
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="6"}
+- Other potential uses?
+::::
+:::::
+:::::::
+::::::::
+
+##
+
+:::::::{.columns}
+::::{.column width=60% height=100%}
+:::{.darkbg}
+Let's say a grant writer uses generative AI like Copilot to write a grant. How might they decide to use it?
+
+Let's say the grant was not funded, and the community is upset. If you had an AI policy that outlined how you used AI, how could that protect you?
+If you did not have an AI policy, what might you be vulnerable to?
+::::
+:::::
+
+::::::{.column width=40% .smaller-text}
+A policy could protect you by:
+
+::::nonincremental
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Ensuring applications maintain a certain level of staff involvement
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Preventing the use of statistics from unreliable sources
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Helping staff use AI effectively and ethically
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Other potential ways it could protect you?
+::::
+:::::
+:::::::
+::::::::
+
+
+##
+
+:::::::{.columns}
+::::{.column width=60% height=100%}
+:::{.darkbg}
+Let's say a grant writer uses generative AI like Copilot to write a grant. How might they decide to use it?
+
+Let's say the grant was not funded, and the community is upset. If you had an AI policy that outlined how you used AI, how could that protect you?
+If you did not have an AI policy, what might you be vulnerable to?
+::::
+:::::
+
+::::::{.column width=40% .smaller-text}
+Not having a policy could make you more vulnerable to:
+
+::::nonincremental
+:::{.fragment .fade-in-then-semi-out fragment-index="1"}
+- Using AI inappropriately
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="2"}
+- Accusations of using AI in ways that might be unethical or illegal
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="3"}
+- Relationship issues
+::::
+:::{.fragment .fade-in-then-semi-out fragment-index="4"}
+- Other potential ways it could make you vulnerable?
+::::
+:::::
+:::::::
+::::::::
+
+## Resources (Policy){.scrollable}
+::: nonincremental 
+-   GovAI Coalition^[Their website is https://www.sanjoseca.gov/your-government/departments-offices/information-technology/ai-reviews-algorithm-register/govai-coalition]
+-   NIST's AI Risk Management Framework: @aiRMF
+-   Congress.gov. "Generative Artificial Intelligence: Overview, Issues, and Considerations for Congress." September 2, 2025. https://www.congress.gov/crs-product/IF12426.
+-   Congress.gov. "Regulating Artificial Intelligence: U.S. and International Approaches and Considerations for Congress." September 2, 2025. https://www.congress.gov/crs-product/R48555.
+-   National Law Review (to see what's in court right now): https://natlawreview.com/type-law/artificial-intelligence-ai
+-   MIT AI Policy Briefs: @mitAIPolicyBriefs
+-   An outlook on expected AI legal issues from the National Law Review: @regOf2025For2026
+-   TN's AI Council^[https://www.tn.gov/finance/ai-council.html; https://www.tn.gov/content/dam/tn/finance/aicouncil/documents/STS%20Roadmap%20for%20AI.pdf]
+-   AI legislation map: https://infographics.bclplaw.marketing/ai-legislation-map/
+-   Article from Georgetown University on risks of AI Generated code: @genAICodeCybersecurity
+-   OWASP's Generative AI Security Project: @owaspAI
+:::
+## Resources (Learning more) {.scrollable}
+::: nonincremental 
+*Introductory:*
+
+-   Article on AI Literacy from Stanford: @stanfordAILit
+-   Stanford Encyclopedia of Philosophy's article on Artificial Intelligence: @sep-artificial-intelligence
+-   Crash Course's course on AI: @crashCourseAI
+-   Article on Large Language Models written to be accessible: @LLM_101_2025
+
+*Advanced but Accessible:*
+
+-   Article on Neural Networks (this website has other articles that might be of interest): @Brenndoerfer_2025
+-   Paper on how ChatGPT works and why the responses are often generic: @Rudko_Bashirpour_Bonab_2025
+-   Video course from MIT on AI: @Gabrielsson
+
+*In Depth:*
+
+-   Tensor Flow has several resources, ranging from beginner-friendly articles and courses to advanced topics with a focus on designing or using Machine Learning models: @tensorflowML
+-   3 Blue 1 Brown is a youtube channel with videos explaining concepts in math and computer science: @3Blue1Brown. The videos on Linear Algebra, Neural Networks, and Probability will be of particular relevance.
+-   *Artificial Intelligence, A Modern Approach*^[@Russell_Norvig_2022] is one of the most common textbooks on AI in undergrad
+
+:::
+## Resources (ETDD's Policy)
+
+- Ask for a copy of our policy by emailing kcimino@etdd.org
+
+
+<embed title="ETDD's Policy" src="../../ETDDAIPolicy.pdf" width="100%" height="70%" />
+
+
+## {data-menu-title="Questions?"}
+
+:::::{.columns} 
+::::{.column width=60% height=100%}
+:::{.darkbg .v-center-container .center .larger-text }
+**Questions?**
+:::
+::::
+
+::::::
+
+
+## Thank you
+
+
+## References
+::: {#refs}
+:::

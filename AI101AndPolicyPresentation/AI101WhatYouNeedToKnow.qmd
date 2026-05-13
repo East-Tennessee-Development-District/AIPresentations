@@ -1,0 +1,556 @@
+---
+title: "AI 101"
+brand:
+  color:
+    palette:
+      pale-green: "#adc9ba"
+      light-green: "#70A086"
+      blue: "#015a71 "
+      dark-blue: "#70A086"
+    background: "#adc9ba"
+    foreground: blue
+    primary: blue
+format: 
+  revealjs:
+    incremental: true
+    reference-location: document
+    slide-number: true
+    show-slide-number: print
+    show-notes: false
+    embed-resources: true   
+    subtitle: "What you need to know"
+    include-in-header: 
+      text: |
+        <style>
+        .v-center-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 90%;
+        }
+        </style>
+editor: source
+---
+
+## What we'll cover:
+
+::: {.nonincremental}
+- What AI is
+- Examples of AI in your life
+- How AI works (conceptually)
+- Why AI is gaining attention (again)
+- Practical concerns when using AI
+- Examples of how to put this information into action
+:::
+
+## Goals for the Training
+
+::: {.nonincremental style="font-size: 95%;"}
+- Understand at a basic level what AI is
+- Understand that there are different kinds of AI models
+- Understand different AI models are appropriate for different tasks
+- Be able to apply this information to evaluate if an AI model is probably appropriate
+- Understand why the term AI has become seemingly ubiquitous
+- Have a basis for further learning (come back for AI 102! I'll be a nerd and tell you why AI is cool!)
+:::
+
+## What Is AI?
+
+---
+ 
+ 
+::: {.v-center-container}
+"AI is whatever hasn't been done yet."
+— Tesler's Theorem^[https://www.nomodes.com/larry-tesler-consulting/adages-and-coinages \n According to Tesler, he originally said "Intelligence is whatever machines haven't done yet”, however Tesler's Theorem is more well known and also easier to connect here]
+
+::: aside
+
+ (ca. 1970)
+
+:::
+::: 
+
+::: {.notes}
+ Larry Tesler was a computer scientist who worked in the Stanford Artificial Intelligence Laboratory (and later pioneered copy and paste as we know them today)
+ 
+:::
+ 
+ 
+## Defining AI
+
+- How do you define "Intelligence"?
+- Academic definitions differ and are not always helpful for practical use
+
+:::{.fragment}
+|                 | Human-based                    | Ideal Rationality             |
+|-----------------|--------------------------------|-------------------------------|
+| Reasoning-based | Systems that think like humans | Systems that think rationally |
+| Behavior-based  | Systems that act like humans   | Systems that act rationally^[https://plato.stanford.edu/entries/artificial-intelligence/]   |
+:::
+::: {.notes}
+
+In general, it's somewhat common to not have clear definitions in academic fields because it's difficult to create a definition that covers everything it should while excluding everything else. As an exercise after this presentation, try to define a 'chair' in a way that would include e.g. beanbag chairs, but not horses
+AI does have a harder time with the definition of the field in part because as a field it interacts with computer science, statistics, philosophy, neurology, neurocomputation, and other fields. Depending on one's focus, AI can be interpreted in wildly different ways, and that's without accounting for academic vs common-use definitions.
+
+:::
+
+## Defining AI
+AI is "an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI systems are designed to operate with varying levels of autonomy"^[NIST. (2023). AI Risk Management Framework. *Artificial Intelligence Risk Management Framework (AI RMF 1.0), 1*(1). https://doi.org/10.6028/nist.ai.100-1]
+
+::: {.notes}
+This is the definition we're using at ETDD
+:::
+
+## Defining AI 
+Questions to help determine if it's AI:
+
+-	Does the technology use data to provide predictions, recommendations, insights, or decisions? 
+-	Does the technology augment or replace human decision-making? 
+-	Does the company use words such as “personalized”, “tailored”, and “adaptive” in its marketing?” 
+-	Would it be difficult or impossible to write out how a program does what it does, either because the process is opaque or because it is mathematically complex? ^[(2024, March 18). *AI Handbook*. San Jose. https://www.sanjoseca.gov/home/showpublisheddocument/109904/638463850657330000]
+
+
+::: {.notes}
+These are in our AI policy. If the answer is yes to any of them, you should treat it as AI until told otherwise.
+:::
+
+## Examples of AI
+
+What are some examples of AI you interact with on a regular basis?
+
+::: {.fragment .fade-in-then-out}
+![](../assets/ocr.png){.absolute top=30% right=40% height=400 width=300}
+[Optical Character Recognition]{.absolute top=90% right=30%}
+:::
+
+::: {.fragment .fade-in-then-out}
+![](../assets/videoGames.png){.absolute top=30% right=30% width=500 height=300}
+[Video Games^[https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games
+Image from: https://commons.wikimedia.org/wiki/File:Pac-Man_eating_dots.svg]]{.absolute top=90% right=40%}
+:::
+
+::: {.fragment .fade-in-then-out}
+![](../assets/spamFilter.png){.absolute top=30% right=30% width=500 height=300}
+[Spam Filters^[Image from: https://commons.wikimedia.org/wiki/File:Email-spam-sample_(cropped).png]]{.absolute top=90% right=40%}
+:::
+
+## How AI Works Conceptually
+
+Understanding the kinds of AI can help you know when and how to use AI
+
+
+```{dot}
+digraph G{
+
+center=true
+bgcolor="transparent"
+
+node [color="#015a71", fontcolor="#015a71", fillcolor="white", style="filled"]; AI; Logistic; NonLogistic; Probabilistic; Neurocomputational 
+
+AI -> Logistic [color = "#015a71"]
+AI -> NonLogistic [color = "#015a71"]
+
+NonLogistic -> Probabilistic [color = "#015a71"]
+NonLogistic -> Neurocomputational [color = "#015a71"]
+
+}
+
+
+```
+
+::: notes
+
+When thinking of the different kinds of AI, it might help to think of them like Excel vs Word. You probably don't know much about how either works at a low level (i.e. what language they're coded in, how the data is represented), but you know you probably shouldn't use Word to create tables with complex calculations or Excel to write an essay.
+
+:::
+
+<!-- It could be worth simplifying this -->
+
+---
+
+Lets say you need an AI to help organize some recipes:
+
+
+
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+::: {.fragment .highlight-current-blue fragment-index=4}
+::: {.fragment .semi-fade-out fragment-index=5}
+Logicist AI
+:::
+:::
+
+::: {.fragment .highlight-current-blue fragment-index=6}
+::: {.fragment .semi-fade-out fragment-index=7}
+Probabilistic AI
+:::
+:::
+
+::: {.fragment .highlight-current-blue fragment-index=10}
+::: {.fragment .semi-fade-out}
+Neurocomputational AI
+:::
+:::
+
+:::
+
+
+::: {.column width="20%"}
+:::{.fragment fragment-index=1}
+::: {.fragment .fade-out fragment-index=7}
+![](../assets/recipeCard.png)
+:::
+:::
+
+:::{.fragment fragment-index=5}
+::: {.fragment .fade-out fragment-index=7}
+![](../assets/recipeCard.png)
+![](../assets/recipeCard.png)
+:::
+:::
+
+:::{.fragment fragment-index=7}
+![](../assets/recipeCard.png){.absolute top=80 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=130 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=180 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=230 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=280 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=330 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=380 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=430 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=480 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=530 right=40% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=80 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=130 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=180 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=230 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=280 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=330 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=380 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=430 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=480 right=50% width="50" height="30"}
+![](../assets/recipeCard.png){.absolute top=530 right=50% width="50" height="30"}
+:::
+
+:::
+
+::: {.column width="20%"}
+:::{.fragment fragment-index=2}
+![](../assets/robot.png)
+:::
+:::{.fragment fragment-index=8}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+![](../assets/robot.png){width="60" height="100"}
+
+:::
+
+
+:::
+
+::: {.column width="20%"}
+:::{.fragment fragment-index=3}
+
+![](../assets/cakeRecipeBox.png)
+![](../assets/notCakeRecipeBox.png)
+:::
+:::{.fragment fragment-index=9}
+![](../assets/cake.png)
+![](../assets/notCake.png)
+:::
+:::
+::::
+
+:::{.notes}
+Think of logicist artificial intelligence as a series of rules. If you know all of your cake recipes are made with flour and butter and are cooked at 350 degrees, and none of your non cake are you can give that rule to an AI who can sort them based on the logic you gave it.
+
+
+Think of probabilistic AI as showing a model a bunch of recipes labeled 'cake' and 'not cake' with notes on each ingredient; once it is trained you can show it a recipe and it'll say how likely it is a recipe for cake or not
+
+Think of "neurocomputational" as having a bunch of robots working in groups. You can show them a bunch of recipes, and each group will work to figure out one part of what makes a recipe. You can then ask them to label something as cake or not, or even potentially ask them to give you a new cake recipe. They could be super accurate (maybe they figured out some cakes are made with almond flour), or could be really off (they could think a recipe for wet cement is cake), because they don't have the context to know what cake is, and aren't good at telling you what they do / look at.
+
+:::
+
+## Real Life Examples of Each Kind of AI
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+::: {.fragment .highlight-current-blue fragment-index=2}
+Logicist
+:::
+
+::: {.fragment .highlight-current-blue fragment-index=6}
+Probabilistic
+:::
+
+::: {.fragment .highlight-current-blue fragment-index=4}
+Neurocomputational
+:::
+
+:::
+
+::: {.column width="60%"}
+
+::: {.fragment .fade-in-then-out fragment-index=1}
+![](../assets/videoGames.png){.absolute top=40% right=20% width=500 height=300}
+[Video Games^[https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games
+Image from: https://commons.wikimedia.org/wiki/File:Pac-Man_eating_dots.svg]]{.absolute top=90% right=30%}
+
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=3}
+![](../assets/ocr.png){.absolute top=15% right=20% height=400 width=300}
+[Optical Character Recognition]{.absolute top=90% right=30%}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=5}
+![](../assets/spamFilter.png){.absolute top=40% right=20% width=500 height=300}
+[Spam Filters^[Image from: https://commons.wikimedia.org/wiki/File:Email-spam-sample_(cropped).png]]{.absolute top=90% right=30%}
+:::
+
+:::
+
+::::
+
+::: {.notes}
+
+Lots of video games use expert systems to tell NPCs what to do. For example, in Skyrim NPCs have to know where to walk without someone controlling them, how do they do that? How do NPCs know if they should try to fight the dragon, or run away?
+
+Unfortunately, spam emails don't usually tell you they're spam, so how can spam filters work? It would take hours and hours of manual work to create rules that would work for the spam I get on my work email and my personal email, much less that would be mostly accurate for most people. This is somewhere ML excels- select an appropriate model, give it labelled data, and it can create rules to catch most spam.
+
+Optical Character Recognition is used to e.g. add words to scanned PDFs. It's usually based on Neural nets, which are especially good at computer vision
+
+:::
+
+## 
+
+|   | Logicist | Probabilistic | Neurocomputational |
+|----------------|----------------|--------------------|--------------------|
+| good for: | clearly defined logic | clear factors | No clear process |
+| bad at: | handling uncertainty | operating with limited /bad data or assumptions | Truth; Explainability |
+| example: | email inbox rules | (some) population forecasting | chatGPT |
+
+: AI Model Type Overview {tbl-colwidths="\[25,25,25,25\]"}
+
+::: notes
+To give another example of each:
+In my personal life, I've signed up for a few store rewards cards. I like looking at the flyers before I go, but I don't want them cluttering up my inbox, so I set inbox rules to move those to a folder. Some of the companies use different emails, so I can't create rules that always filter correctly because there is some uncertainty about what emails should / should not be moved.
+
+At my last job, I had to predict how many cars we'd sell of certain types so we could buy appropriate stock. There aren't clear human definable rules for predicting that, but we had previous sales data. The data sucked, so the forecast had an upper limit on how good it could be. As a company we artificially inflated demand in December by running sales then, so we had to account for that outside of the Machine Learning model because the data was not accurate.
+
+When I was a lab manager, one of the projects I worked on was creating an algorithm to sort hand-drawn paperwork. There were no clearly defined features I could use, and no clear rules about which was which I could communicate to a computer. I cross-trained a computer vision neural network to sort the documents into different folders but it couldn't have told me e.g. why it sorted them a certain way.
+
+:::
+
+## Why AI Is Gaining Attention (again)
+
+Why do you think there is a lot of hype around AI right now? Has this happened before?
+
+## Why not before now:
+
+- The idea of 'artificial intelligence' can be seen even in writings by Ancient Greek philosophers, so why haven't robots taken over yet?
+
+- Turing's Chess
+
+- early neural nets (1950's)
+
+- Impracticality of probability
+
+- not user-friendly
+
+- AI Winters
+
+::: {.notes}
+AI as a field of study came from formal logic theory (which came from philosophy), with some important additions from probability theory and neuroscience.
+
+Alan Turing created an AI which could play chess by designing an algorithm which would take the current state of a chess board, and then assign points to all possible next moves and choose the move with the highest points. Because of technical limitations, he never ran this on a computer.
+
+"However, this is only part of the story: the part that reaches back but to Turing and others (e.g., von Neuman) responsible for the first electronic computers. The other part is that, as already mentioned, AI has a particularly strong tie, historically speaking, to reasoning (logic-based and, in the need to deal with uncertainty, inductive/probabilistic reasoning). In this story, nicely told by Glymour (1992), a search for an answer to the question “What is a proof?” eventually led to an answer based on Frege’s version of first-order logic (FOL): a (finitary) mathematical proof consists in a series of step-by-step inferences from one formula of first-order logic to the next. The obvious extension of this answer (and it isn’t a complete answer, given that lots of classical mathematics, despite conventional wisdom, clearly can’t be expressed in FOL; even the Peano Axioms, to be expressed as a finite set of formulae, require SOL) is to say that not only mathematical thinking, but thinking, period, can be expressed in FOL. (This extension was entertained by many logicians long before the start of information-processing psychology and cognitive science – a fact some cognitive psychologists and cognitive scientists often seem to forget.) Today, logic-based AI is only part of AI, but the point is that this part still lives (with help from logics much more powerful, but much more complicated, than FOL), and it can be traced all the way back to Aristotle’s theory of the syllogism.[15] In the case of uncertain reasoning, the question isn’t “What is a proof?”, but rather questions such as “What is it rational to believe, in light of certain observations and probabilities?” This is a question posed and tackled long before the arrival of digital computers."
+"Connectionism, the view that intelligence consists not in symbolic processing, but rather non-symbolic processing at least somewhat like what we find in the brain (at least at the cellular level), approximated specifically by artificial neural networks, came roaring back in the early 1980s on the strength of more sophisticated forms of such networks, and soon the situation was (to use a metaphor introduced by John McCarthy) that of two horses in a race toward building truly intelligent agents"
+"Feature engineering has grown to be one of the most labor intensive tasks of machine learning, so much so that it is considered to be one of the “black arts” of machine learning. The other significant black art of learning methods is choosing the right parameters. These black arts require significant human expertise and experience, which can be quite difficult to obtain without significant apprenticeship (Domingos 2012). Another bigger issue is that the task of feature engineering is just knowledge representation in a new skin."
+https://plato.stanford.edu/entries/artificial-intelligence/
+
+:::
+
+## Why now is different (technical):
+
+- Graphical Processing Units (GPUs)
+- Incredible access to data
+  - Raised some new needs
+- Bayesian probability is easy(ish) now
+- Attention Is All You Need^[https://arxiv.org/abs/1706.03762]
+
+::: {.notes}
+GPUS are designed to run multiple processes at the same time, so models that would be too complex to run with CPUs because of the time became practical with GPUs https://cloud.google.com/discover/gpu-for-ai
+
+The increase in access to data is due to many factors, including the normalization of data collection e.g. by grocery stores and smart phones, but the easiest to point out is the rise of the internet. It's a lot easier to scrape a few dozen websites and get usable data compared to trying to convert printed books into a format usable by ML.
+These changes have also created new (or amplified existing) use cases- like Netflix and Amazon wanting to show you things you might want to watch/buy.
+
+Bayesian probability can handle uncertainty better, and is often more useful for ML than frequentist methods (come to AI 102 for a crash course), but requires a lot of computation which was impractical before modern computing.
+
+A paper put out by computer scientists at Google in 2017 introduced a new way of adding context to things as they were processed by neural nets. Come to AI 102 if you want to learn more, it's super cool, but the important part is that it created huge advances in the field
+
+:::
+
+
+## Why now is different (social):
+
+- chatbots (seem more human)^[https://www.ibm.com/think/insights/eliza-effect-avoiding-emotional-attachment-to-ai]
+- Easy to use products
+- \$\$\$^[https://www.nytimes.com/2025/08/27/business/economy/ai-investment-economic-growth.html]
+- hype
+
+::: {.notes}
+
+Image generators and neural nets have existed for years now- back when I was in college there was a Tumblr blog that was a bot someone trained on their own blog (inspired by a webcomic) that ran from 2019-2024. The bot was fun, and was basically a research project by the person who developed it that took many hours to set up, and many more to keep working long term. 
+Until chatGPT, advanced ML models were not available to casual users except in end products. Most casual users had access to things like google translate, but probably didn't know it was AI much less anything about how it worked. Honestly, most people still don't know anything about how the AI in their lives work, but it is less intimidating now that you can go to a website and "chat" with a bot instead of having to learn basic coding and already know that machine learning exists.
+We're in the middle of a EDIT of AI- lots of novel research is being done and right now the public is more aware that AI can do cool things, so it's cool to call things AI. Some of this is hype by people who are excited about AI, or are taking advantage of those who are excited, and this hype (and again, the genuinely good research) means there's more money going to AI right now.
+
+:::
+
+## Why now is (not) different
+
+- upper limit on benefits from data 
+- better compute still has a practical limit ^[https://foundationcapital.com/has-ai-scaling-hit-a-limit/]
+- putting all of the eggs in one or two baskets funding and hype-wise^[https://www.dwarkesh.com/p/francois-chollet]
+
+::: {.notes}
+
+We're already seeing decreasing returns on just adding more data, and now we've got issues where internet data is increasingly poisoned in a way that could lead to model collapse
+Most of the hype around AI is around LLMs and image generators, which are cool and also are not magic. There's a good chance as a society we will put all of our eggs into the LLMs are going to save us basket, and in a few years when we still have jobs people will lose interest.
+Right now better computing has an upper limit in terms of resources available, and quantum computing is unlikely to save us soon (and poses its own issues)
+
+
+:::
+
+## Practical Concerns with AI
+
+What do you think are some practical concerns when you are using AI? What do you try to keep in mind when you are using AI?
+
+## What AI is Not {visibility="hidden"}
+
+- Not a replacement for verified sources
+- Not a replacement for your own brain
+  - It cannot understand in the way we do
+
+:::{.notes}
+AI is not a replacement for verified sources- the little robots know what a fact looks like, not what is true or not. If you e.g. look up statistics with ChatGPT, the robots will give you something that looks accurate, but you will have to double check with a reputable source (probably data.census.gov). If I build an AI tool that will pull census data, the source is not the tool the source will be wherever I get the data from (likely data.census.gov).
+
+Whether or not any existing AI can understand is a philosophical question that does not directly impact how you should use it right now. What does matter is that it cannot understand in the way we do, but many people think it does because of the Eliza effect.
+:::
+
+## Genuine Dangers
+
+- Malware^[https://developer.nvidia.com/blog/how-code-execution-drives-key-risks-in-agentic-ai-systems/]
+- Legal Grey Areas
+  - AI Notetakers^[https://natlawreview.com/article/listen-if-your-ai-policy-does-not-cover-ai-recording-issues-another-class-action and https://www.computerworld.com/article/4041849/enterprise-note-taking-apps-face-legal-scrutiny-as-otter-hit-with-privacy-suit.html]
+  - State laws
+  - Mostly applying existing laws to AI
+- Plagiarism^[https://link.springer.com/article/10.1007/s10639-024-13151-7 \n Most of the studies right now are focused on academia, but we can extrapolate from these studies that what is or is not plagiarism with regards to AI is not settled.]
+- Lost of trust with communities
+- Loss of quality
+
+
+## Ethics
+
+- Data Collection
+  
+- Copyright
+  - Potential loss of models^[https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf]
+  - Currently not always able to copyright AI generated content in the US^[https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf]
+
+- Public Opinion
+  - Plagiarism^[https://link.springer.com/article/10.1007/s10639-024-13151-7 \n Most of the studies right now are focused on academia, but we can extrapolate from these studies that what is or is not plagiarism with regards to AI is not settled.]
+
+::: {.notes}
+
+In Data Science, a common refrain is garbage in garbage out. At an extreme, if a model was trained on 4chan, you're not going to get professional emails out of it. For a more realistic example, if a transcript generating model was only trained on men with british accents, it won't do a good job transcribing meetings we're in. Data collection can also affect how the company uses your data- e.g. most AI note takers use your data to train their models, which makes them not appropriate for meetings where someone might say something you don't want in a model you can't control.
+
+
+There are currently several court cases working to determine if training AI on copyrighted works without permission is considered fair use, and if there are instances where it might not be. Those cases could significantly impact many of the popular models today.
+
+When smartphones first started to become popular, part of the city I lived in had it so it was legal to use your phone while driving, but as soon as you crossed a bridge it had to be hands free. The solution most people ended up on was just only using it hands free most of the time so they didn't forget or not realize they were somewhere where it wasn't legal. This approach is similar to what we've adopted as an organization, especially when it comes to e.g. AI Notetakers (which might interact with people in a state with two party consent laws we don't want to break).
+
+:::
+
+## Right model for the job
+  - Probabilistic vs deterministic
+  - Is AI the best solution?
+  - Resource use
+    - Less obvious when it's "on the cloud", but still worth considering
+    
+::: {.notes}
+If I create a website for online shopping, and you judge it based on whether or not it lists states with the letter "R" in their name, that's not really fair unless my website is the "states with the letter "R" in their name shop"
+
+If you need specific wording or existing data, probabilistic AI is not going to be appropriate. If you want to organize pdfs, probabilistic AI is more likely to work (unless you have a good file naming scheme) because it can create rules to determine which files are similar to one another.
+
+There are times where AI is not the best solution. If you want to check the accessibility of a website, there is a lot you can do with automation (e.g. color contrast), but some of it is easier to just check than try to create AI for (full screen-reader compatibility).
+
+:::  
+
+## You are the one using the tool
+
+- Automation Bias^[https://link.springer.com/article/10.1007/s00146-025-02422-7]
+- Responsibility
+
+::: {.notes}
+
+As a general rule, people tend to trust or rely on things that are 'automated' more than they should. This can include even things like trusting information you get from AI more than an expert because most LLMs are really good at sounding confident even when they're wrong (like a lot of people on the internet), but it can also include not being as thorough when you fact check things you get from AI because it feels more trustworthy. This is part of why you have to check any information with verified sources (also because the little robots don't understand what a 'fact' is).
+If a model produces a bad result (e.g. bad image, inaccurate transcript, inaccurate information), you are responsible for anything that happens if you use it. AI is a tool and you are using it, it is not autonomous (yet)
+:::
+
+## Quick Practical Advice
+
+- Don't use AI search results without verifying them
+- If you use chat bots: 
+  - Give them context in your prompt
+  - Try different prompting strategies (e.g. say "you are an X", be nice)
+- Don't forget the sunk cost fallacy
+- Sometimes older methods are better
+
+::: {.notes}
+
+The AI search is unreliable, you need to verify any information with reliable sources (like in our policy)
+
+Currently, there is not clear evidence that certain strategies are universally helpful with all tasks for any given LLM model, and the models are changing at a fast enough pace that a strategy that works now might not a month from now. Instead, try different strategies to see which seems to get you what you want. Some strategies include being polite in how you word the prompt, including in your prompt something like "You are a planner,", and prompting it to "think step by step". This last one will use more resources, and is not always effective, so use it sparingly.
+
+It can be easy to spend more time trying to do something an 'easy' way than you would doing it the 'hard' way. I have a tendency to do this, and what I've found helpful is setting a timer for a quarter or half as long as I think it'd take to do the hard way and switching to the hard way if I'm not done in that time.
+
+AI is the new cool shiny toy that's suddenly everywhere, and it can be exciting to use new tech (or old tech with a new coat of paint). It's not always the most effective or easiest way to do things even if it feels like it is.
+
+:::
+
+## Putting It In Action / Hypotheticals
+
+---
+
+Let's say you want to predict the future population of Knoxville. A company is offering to use AI to forecast the population for the next ten years. What could you ask them to evaluate if their methods work? 
+
+Would you feel confident in your answer, or would you want to ask someone who is more familiar with forecasting?
+
+:::{.notes}
+
+:::
+
+---
+
+Let's say you want to write Planning 101 guide for ETDD to give to local planners to help them make better choices (and maybe sell later), but you're on a time crunch so you want to use a generative AI to help you. How could it help you? What concerns would you keep in mind using it?
+
+
+:::{.notes}
+
+:::
+
+## Thank you

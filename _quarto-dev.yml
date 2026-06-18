@@ -1,0 +1,12 @@
+project:
+  output-dir: dev
+  type: website
+
+format:
+  html:
+    axe: 
+      output: document 
+  revealjs:
+    axe: 
+      output: document 
+      

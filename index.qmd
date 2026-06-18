@@ -1,0 +1,26 @@
+---
+title: "AI Home"
+format: html
+---
+
+# AI Presentations
+
+This is the landing page for ETDD's AI Presentations. Click on one of the links below to see that presentation.
+
+Each of these presentations has additional accessibility options- press the `A` key to open the accessibility menu.
+
+## AI 101 and AI Policy
+This is the training all ETDD staff receive
+
+[Presentation Version](AI101AndPolicyPresentation/AI101WhatYouNeedToKnowNoNotes.qmd)
+
+[With Notes](AI101AndPolicyPresentation/AI101WhatYouNeedToKnow.qmd)
+
+## AI Policy Writing 101
+This presentation was given at the state-wide conference for development districts in 2026
+
+[Presentation Version](AIPolicyWriting101/AIPolicyWritingNoNotes.qmd)
+
+[With Minimal Increments](AIPolicyWriting101/AIPolicyWritingNonIncremental.qmd)
+
+[With Notes](AIPolicyWriting101/AIPolicyWriting.qmd)

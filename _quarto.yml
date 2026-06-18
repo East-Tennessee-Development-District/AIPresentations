@@ -1,9 +1,15 @@
 project:
-  output-dir: _output
+  output-dir: docs
+  type: website
 
 bibliography: commonFiles/references.bib  
 csl: commonFiles/chicago-notes-intext-bibliography-access-dates.csl
 format: 
+  html:
+    theme: commonFiles/custom.scss
+    css: commonFiles/custom.css
+    embed-resources: true   
+    logo: assets/ETDDLogo.svg
   revealjs:
     theme: commonFiles/custom.scss
     css: commonFiles/custom.css

@@ -1,5 +1,6 @@
+
 /*-- scss:global --*/
-//@import "colors";
+
 $etdd-green: #76A487 !default;
 $etdd-green-on-white-bg: #548064 !default;
 $dark-etdd-green: #406c51 !default;
@@ -9,18 +10,24 @@ $etdd-green-for-bg: #b5e5c6 !default;
 $etdd-green-for-lighter-bg: #ceffdf !default;
 $etdd-blue: #165570 !default;
 $etdd-light-blue-accent: #3f7a97 !default;
+$etdd-dark-blue-accent: #0d4e6a !default;
+$highlight-color: #59CDFF !default;
+
 
 /*-- scss:defaults --*/
 
 // Base document colors
 $body-bg: $etdd-green-for-lighter-bg;
 $body-color: $etdd-blue;
-$link-color: $etdd-light-blue-accent;
+$link-color: $etdd-dark-blue-accent;
 $callout-color-tip: $etdd-green-on-white-bg;
 $callout-color-important: $etdd-accent-red;
 $presentation-font-smaller: .8;
 
 /*-- scss:rules --*/
+.reveal .speaker-notes .notes-placeholder {
+  color: #000 !important;
+}
 .reveal .slides section {
     display: flex;
     flex-direction: row;
@@ -50,8 +57,8 @@ $presentation-font-smaller: .8;
     height: 90%;
 }
 .reveal .slides .fragment.highlight-current-red.current-fragment {
-  color: #59CDFF;
-  text-decoration: underline #59CDFF solid 0.1em;
+  color: $highlight-color;
+  text-decoration: underline $highlight-color solid 0.1em;
   
 }
 .reveal .slides .fragment.highlight-current-blue.current-fragment {

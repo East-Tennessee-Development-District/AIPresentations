@@ -15,6 +15,8 @@ format:
     embed-resources: true   
     logo: assets/ETDDLogo.svg
   revealjs:
+    revealjs-plugins:
+      - a11y
     theme: commonFiles/custom.scss
     css: commonFiles/custom.css
     incremental: true
@@ -27,4 +29,8 @@ format:
     fragment-in-url: true
     pdf-separate-fragments: true
     author-meta: "Killian Cimino"
-    logo: assets/ETDDLogo.svg
+    logo:
+      path: assets/ETDDLogo.svg
+      alt: "etdd logo"
+
+

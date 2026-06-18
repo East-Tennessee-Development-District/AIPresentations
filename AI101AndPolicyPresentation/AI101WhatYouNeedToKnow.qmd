@@ -554,5 +554,10 @@ What concerns would you keep in mind using it?
 ## Thank you
 
 ## References
+::::{.scrollable-region tabindex="0"}
 ::: {#refs}
 :::
+::::
+## Policy
+
+<embed title="ETDD's Policy" src="../commonFiles/ETDDAIPolicy.pdf" width="100%" height="70%" />

@@ -14,30 +14,9 @@
   speak-as: bullets;
 }
 
-@counter-style silly {
-  system: cyclic;
-  fallback: square;
-  symbols: "\1F58B";
-  suffix: " ";
-  speak-as: bullets;
-}
-
-
-@counter-style paper {
-  system: cyclic;
-  fallback: square;
-  symbols: "\1F5CE";
-  suffix: " ";
-  speak-as: bullets;
-}
-
-
-
 .etddBulletPoint {
   
-   li {
-    list-style: url('../assets/ETDDLogo.svg') thumbs;
-  } 
+   li {list-style: url('../assets/ETDDLogo.svg') thumbs;} 
   
   li::marker{
    /* content: url('../../assets/ETDDLogo.svg') / "+";*/
@@ -47,15 +26,7 @@
   }
 }
 
-.paperBulletPoint {
-   li {
-    list-style: paper;
-  } 
-  li::marker{
-    font-size: 1.5em;
-    line-height: .7;
-  }
-}
+
 .sparklesBulletPoint {
    li {
     list-style: sparkles;
@@ -71,44 +42,10 @@
     
   }
 } 
-.sillyBulletPoint {
-   li {
-    list-style: silly;
-  } 
-  li::marker{
-    font-size: 1.5em;
-    line-height: .7;
-  }
-} 
-/*
-  li:before {
-    content: url('../../assets/ETDD-New Logo-transparent.png');
-  /*content: "+";
-//  padding-right: 5px;
-  }
-  */
-  
+
+.reveal .slide-footnotes {
+  overflow-y: auto;
 }
-
-  /*background-image: url("../../assets/sqpurple.png");
-  background-position: 0 0;
-  background-size: 1.6rem 1.6rem;
-  background-repeat: no-repeat;*/
-  /*list-style-image: url('../../assets/sqpurple.png');
-  /list-style-position: inside;  
-  //list-style-type: "!";
- 
-  ul {
-    list-style: thumbs;
-  //list-style-image: url('../../assets/sqpurple.png');
-  //list-style-type: "&#x1F514";
-  //list-style: square;
+.reveal .scrollable-region {
+  overflow-y: auto;
 }
-
-//li {
-//  padding-left: 1em;
-//  text-indent: -1em;
-//}
-*/
-  
-

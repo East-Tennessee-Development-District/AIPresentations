@@ -62,7 +62,7 @@ Larry Tesler was a computer scientist who worked in the Stanford Artificial Inte
 : AI Definition Overview^[@sep-artificial-intelligence]
 :::
 ::: notes
-In general, it's somewhat common to not have clear definitions in academic fields because it's difficult to create a definition that covers everything it should while excluding everything else. As an exercise after this presentation, try to define a 'chair' in a way that would include e.g. beanbag chairs, but not horses AI does have a harder time with the definition of the field in part because as a field it interacts with computer science, statistics, philosophy, neurology, neurocomputation, and other fields. Depending on one's focus, AI can be interpreted in wildly different ways, and that's without accounting for academic vs common-use definitions.
+In general, it's somewhat common to not have clear definitions in academic fields because it's difficult to create a definition that covers everything it should while excluding everything else. As an exercise after this presentation, try to define a 'chair' in a way that would include e.g. beanbag chairs, but not horses. AI does have a harder time with the definition of the field in part because as a field it interacts with computer science, statistics, philosophy, neurology, neurocomputation, and other fields. Depending on one's focus, AI can be interpreted in wildly different ways, and that's without accounting for academic vs common-use definitions.
 :::
 
 ## Defining AI
@@ -142,6 +142,7 @@ NonLogistic -> Neurocomputational [color = "#015a71"]
 When thinking of the different kinds of AI, it might help to think of them like Excel vs Word. You probably don't know much about how either works at a low level (i.e. what language they're coded in, how the data is represented), but you know you probably shouldn't use Word to create tables with complex calculations or Excel to write an essay.
 
 :::
+
 ------------------------------------------------------------------------
 
 Lets say you need an AI to help organize some recipes:
@@ -274,9 +275,9 @@ Optical Character Recognition is used to e.g. add words to scanned PDFs. It's us
 To give another example of each:
 In my personal life, I've signed up for a few store rewards cards. I like looking at the flyers before I go, but I don't want them cluttering up my inbox, so I set inbox rules to move those to a folder. Some of the companies use different emails, so I can't create rules that always filter correctly because there is some uncertainty about what emails should / should not be moved.
 
-At my last job, I had to predict how many cars we'd sell of certain types so we could buy appropriate stock. There aren't clear, human definable rules for predicting that, but we had previous sales data. The data sucked, so the forecast had an upper limit on how good it could be. As a company we artificially inflated demand in December by running sales then, so we had to account for that outside of the Machine Learning model because the data was not accurate.
+Car retailers often try to predict how many cars they will sell of certain types so they can buy appropriate stock. There aren't clear, human definable rules for predicting that, but they have previous sales data and know they can looks at things like SUV vs truck and Honda vs Ford. The quality of data sets an upper limit on how good the forecast can be. Some of them artificially inflate demand in December by running sales, so they have to account for that outside of the Machine Learning model because the data is not accurate for December.
 
-When I was a lab manager, one of the projects I worked on was creating an algorithm to sort hand-drawn paperwork. There were no clearly defined features I could use, and no clear rules about which was which I could communicate to a computer. I cross-trained a computer vision neural network to sort the documents into different folders but it couldn't have told me e.g. why it sorted them a certain way.
+Computer vision uses neural nets to do things like determine if a picture is of a cat or a dog. A more practical example is to sorting old, hand-drawn paperwork. There are typically no clearly defined features to use, and no clear rules about which is which you could communicate to a computer. You can cross-train a computer vision neural network to sort the documents into different folders, but it can't tell you e.g. why it sorted them a certain way.
 
 :::
 
@@ -308,19 +309,11 @@ With the rise of new AI tools, it is still valuable to learn new skills. If you 
 ::: notes
 AI is not a replacement for verified sources- the little robots know what a fact looks like, not what is true or not. If you e.g. look up statistics with ChatGPT, the robots will give you something that looks accurate, but you will have to double check with a reputable source (probably data.census.gov). If someone builds an AI tool that will pull census data, the source is not the tool the source will be wherever the tool gets the data from (likely data.census.gov) but you should still double check because mistakes can happen when coding things like that.
 
-Currently, there is not clear evidence that certain strategies are universally helpful with all tasks for any given LLM model, and the models are changing at a fast enough pace that a strategy that works now might not a month from now. Instead, try different strategies to see which seems to get you what you want. Some strategies include being polite in how you word the prompt, including in your prompt something like "You are a planner,", and prompting it to "think step by step". This last one will use more resources, and is not always effective, so use it sparingly.
+Currently, there is not clear evidence that certain strategies are universally helpful with all tasks for any given LLM model, and the models are changing at a fast enough pace that a strategy that works now might not a month from now. Instead, try different strategies to see which seems to get you what you want. Some strategies include being polite in how you word the prompt; including in your prompt something like "You are a planner,"; and prompting it to "think step by step". This last one will use more resources, and is not always effective, so use it sparingly.
 
 It can be easy to spend more time trying to do something an 'easy' way than you would doing it the 'hard' way. I have a tendency to do this, and what I've found helpful is setting a timer for a quarter or half as long as I think it'd take to do the hard way and switching to the hard way if I'm not done in that time.
 
-AI is the new cool shiny toy that's suddenly everywhere, and it can be exciting to use new tech (or old tech with a new coat of paint). It's not always the most effective or easiest way to do things even if it feels like it is.
-
-As a general rule, people tend to trust or rely on things that are 'automated' more than they should. This can include even things like trusting information you get from AI more than an expert because most LLMs are really good at sounding confident even when they're wrong (like a lot of people on the internet), but it can also include not being as thorough when you fact check things you get from AI because it feels more trustworthy. This is part of why you have to check any information with verified sources (also because the little robots don't understand what a 'fact' is). If a model produces a bad result (e.g. bad image, inaccurate transcript, inaccurate information), you are responsible for anything that happens if you use it. AI is a tool and you are using it, it is not autonomous (yet)
-
-If I create a website for online shopping, and you judge it based on whether or not it lists states with the letter "R" in their name, that's not really fair unless my website is the "states with the letter "R" in their name shop"
-
-If you need specific wording or existing data, probabilistic AI is not going to be appropriate. If you want to organize pdfs, probabilistic AI is more likely to work (unless you have a good file naming scheme) because it can create rules to determine which files are similar to one another.
-
-There are times where AI is not the best solution. If you want to check the accessibility of a website, there is a lot you can do with automation (e.g. color contrast), but some of it is easier to just check than try to create AI for (full screen-reader compatibility).
+AI is the new cool shiny toy that's suddenly everywhere, and it can be exciting to use new tech (or old tech with a new coat of paint). It's not always the most effective or easiest way to do things even if it feels like it is. There are times where AI is not the best solution. If you want to check the accessibility of a website, there is a lot you can do with automation (e.g. color contrast), but some of it is easier to just check than try to create AI for (full screen-reader compatibility).
 :::
 
 ## 
@@ -353,6 +346,10 @@ Think about any potential questions:
 - Rapid changes in legal and technical realms
 - A well-written policy can save you time and headaches later
 
+::: notes
+You don't need a policy for something no one wants to use, but increasingly people want to use AI but don't necessarily know how to properly use AI. There is a lot of conflicting and misinformation about what AI is and how to use it. Part of the issue is that AI describes a wide range of things, including some cutting-edge technology that's being treated as if it is traditional, well-established software. One area where you see some of the potential issues with it is that the legal situation and technical capabilities are rapidly changing. A well-written policy now might save you time and issues later, whether it's not needing to rewrite your policy a few months from now due to something like a new law or potentially saving you from legal issues due to someone unintentionally using AI in a way that is unethical or illegal.
+:::
+
 ## ETDD's Policy Outline
 
 ::::{.etddBulletPoint}
@@ -381,7 +378,11 @@ A copy of ETDD's policy is at the end of this presentation
 -   Consumer-Facing
 
 :::::
-
+::: notes
+The legal realm around AI is currently rapidly changing and uncertain. A lot of where we're currently seeing these changes is with figuring out how current laws apply to new(er) AI tools. For example, multiple AI Notetakers are in court trying to determine things like if collecting biometric information without proper consent is breaking California privacy law, or if sending an AI notetaker to a meeting you don't attend might be breaking federal wire tap law.
+In the technical realm generative AI is subject to unique ways of hacking traditional software is not, and cybersecurity experts are just starting to get a sense of the scope of the problem. One area of particular interest is with coding- if you use generative AI to code there are several ways it can pose cybersecurity risks that are elevated compared to coding by hand. Even if you don't open CoPilot and ask it to code for you, if you use low or no code tools, most of those use generative AI. Coding is also a great example of how rapidly things change- since ETDD's policy was written, the primary way of using generative AI for coding has completely changed.
+Even when what is legal to do or technically possible to do doesn't change, what is available to you is probably changing. A lot of the tools you use (e.g. Microsoft Word) are probably adding in AI abilities that were not available until recently.
+:::
 ## Rapid Changes
 :::: {.etddBulletPoint .callout-tip}
 ## *ETDD's Policy*
@@ -394,7 +395,11 @@ A copy of ETDD's policy is at the end of this presentation
 
 ::::
 ::: notes
-"When possible, alternatives to generative AI will be considered, either as preferable products or as potential alternatives in the event we are no longer able to use our current tools."
+We include our Guiding Principles so when something changes (e.g. a new way of using AI is available, we lose access to an existing tool), we aren't starting from square one. We already know what we care about and just have to determine how the change fits in to our existing framework.
+We don't include a list of approved AI tools or use cases because it is likely things would change and then we'd have to rewrite the policy. Instead, we focus on flexible processes and risk assessments that can adapt as things change.
+We keep most of the policy general (e.g. all staff must be trained before using AI), but in some cases we have additional rules (e.g. AI Notetakers require consent before using, we don't allow AI generated code) where they are needed. This lack of specificity when it isn't needed allows us to not have to rewrite the policy as often.
+Generative AI is where we're seeing a lot of these changes, so it is a seperate policy.
+Right now we review the AI Policy at least once per year, but can update it sooner if needed.
 :::
 
 ## Lack of Accessible Information
@@ -410,7 +415,9 @@ A copy of ETDD's policy is at the end of this presentation
 :::::
 
 :::notes
-https://workspace.google.com/blog/productivity-collaboration/everyday-ai-beyond-spell-check-how-google-docs-is-smart-enough-to-correct-grammar https://www.clrn.org/is-spell-check-ai/#A_Deep_Dive_into_the_Algorithms
+Most of the information out there is either very pro-AI or anti-AI, but you need a nuanced understanding of AI to write an effective policy. 
+Most of the AI tools available don't tell you how they work, so you don't have a way to know if it will actually do what is says or if it has unstated risks (e.g. does that "AI coding" tool use templates or an LLM? Do you need to worry about potential malware with it?).
+These issues are heighted by the proliferation of start ups in the space. There are start ups run by competent, passionate people who are honest about what their product is and what it can do, but there are also start ups run by people who just care about the money who are incentivized to tell you whatever it takes for you to buy their product. Even if you find a great start up, there's no guarantee that it'll be here and you'll be able to use it a year from now, and if you don't know how it works it'll be difficult to find a suitable alternative.
 :::
 
 ## Lack of Accessible Information
@@ -426,9 +433,10 @@ https://workspace.google.com/blog/productivity-collaboration/everyday-ai-beyond-
 ::::
 
 ::: notes
-Generative AI can be a wonderful tool, but it does have limitations. Staff at ETDD will only use generative AI for uses they have had approved, and if they request to use it for inappropriate uses (e.g. data analysis), alternatives will be provided. One area where generative AI is typically weak is when it comes to facts. To ensure the usage of AI is effective, staff will always check facts and cite reputable sources for any facts. Staff will not use generative AI to gather statistics or perform data analysis. Staff can use it to get an overview of a topic but must check any information they learn with a reliable source before applying that knowledge at ETDD. Staff can also use it as a search engine if they struggle to get the results they need from a traditional search engine, but they must then verify the information with a reputable source.
-
-partially to account for not reading privacy policy and for AI all being called one thing)
+Guiding Principles help staff understand how they are meant to interact with AI and why.
+All staff must complete AI Training to ensure they have the knowledge required to properly follow the AI Policy.
+Staff must submit AI Requests for the AI and Technology Manager to assess- this helps make sure they are using AI in a way that aligns with our policy. Risk Assessments help ensure the potential risks are known and accounted for, and might include asking providers for additional information about models if required. These assessments can help staff understand any restrictions on their use and why. This also moves the burden of understanding AI tools and reading privacy policies etc from staff who might not understand the underlying systems or what to be concerned about to the AI and Technology Manager who can more accurately assess these tools.
+ETDD prioritizes AI tools that are transparent about how they work, we are transparent about how we use AI, and if we develop any AI tools we will be transparent about how they work.
 :::
 
 ## Public Opinion
@@ -437,6 +445,10 @@ partially to account for not reading privacy policy and for AI all being called 
 -   Public opinion divided^[@Pasquini_2025]
   -   Difficult to know potential consequences on relationships
 -   Plagiarism^[Most of the studies right now are focused on academia, but we can extrapolate from these studies that what is or is not plagiarism with regards to AI is not settled. Here is one study @Chan_2025]
+:::
+
+::: notes
+Right now public opinion is very divided- people tend to be either very pro or anti AI, and so it's difficult to know how using AI might affect your relationships with your agencies, your communities, and anyone else you work with. One area of particular interest is with plagiarism- as of right now there's no consensus on if using generative AI constitutes plagiarism, and if so at what point.
 :::
 
 ## Public Opinion
@@ -449,6 +461,11 @@ partially to account for not reading privacy policy and for AI all being called 
 -   Most Risk Assessments consider this 
 ::::
 
+::: notes
+To try to navigate this, at ETDD we proactively disclose our use of generative AI in a way that is appropriate to the use-case. For example, if you edit an email for succinctness you'd say "this email was edited with CoPilot for succinctness". Or if you generated a transcript and then edited it you'd say "these meeting notes were generated by MS Transcribe, and fact-checked and edited by ETDD staff."
+ETDD avoids certain high-risk use cases like using generative AI in hiring decisions which could cause a scandal or potentially legal issues depending on how badly things go.
+While it's not in the policy, most risk assessments consider public opinion.
+:::
 ## Privacy and Data Concerns
 :::::{.callout-important}
 ## Policy Considerations
@@ -458,7 +475,13 @@ partially to account for not reading privacy policy and for AI all being called 
 -   FOIA
 
 :::::
-
+::: notes
+Thinking about interacting with the public, privacy rights are a potentially major issue.
+Several AI Note Takers are currently in court trying to determine if they've violated privacy laws, and even if they haven't a lot of people don't want their biometric information collected without warning.
+Even when you're not dealing with privacy violations, you have to worry about data leaks. Let's say you're in a meeting, and you've got a problem with one of the mayors holding up a project. And you're honest about the problem because you need to figure out what to do. Someone in that meeting is using an AI Notetaker, and some time later that AI Notetaker has a data leak. The transcript from that meeting is now publicly available, and you could face consequences ranging from the loss of trust of your communities to potential legal consequences.
+And a lot of people put information into generative AI that they shouldn't- people have put their user names and passwords, their social security numbers, all sorts of things that are now public due to data leaks. And even if you are careful about what you put in, if you give these tools access to your files, your emails, etc. it could leak anything contained in those.
+As a development district, anything you put into generative AI might be subject to a Freedom of Information Act Request- if this is relevant to you go ask a lawyer.
+:::
 ## Privacy and Data Concerns
 ::::{.etddBulletPoint .callout-tip}
 ## *ETDD's Policy*
@@ -468,7 +491,8 @@ partially to account for not reading privacy policy and for AI all being called 
 ::::
 
 ::: notes
-
+To avoid having to ask a lawyer (and avoid the risk of data leaks), we don't put any information that is not ready for the public into generative AI. 
+Also, we always ask for consent before adding an AI Note Taker to a meeting, or recording anything with the intent to put it through generative AI after the fact. It is rude to record people without consent, and while Tennessee is a one-party consent state, we work with people in other states where it might be illegal to record them without consent.
 :::
 
 ## Lack of Resources Tailored for Development Districts
@@ -501,7 +525,9 @@ At ETDD we approve things at the level of per person per tool per Use Case, in p
 ## *Policy Considerations*
 - Translating Guiding Principles into policy is hard
 :::
-
+::: notes
+Even once you decide what you care about with AI, it can be difficult to figure out e.g. what using AI effectively should mean as a policy. 
+:::
 ## Putting Guiding Principles into Policy
 :::{.callout-tip .etddBulletPoint}
 ## *ETDD's Policy*
@@ -513,17 +539,13 @@ Example using Effectiveness:
 - Resource Use^[@Explained_2025]
 
 :::
+::: notes
+To be effective with AI, it is important to use the correct tool. This might sometimes mean using older AI tools, and often it will mean not using AI. One area in particular where some people want to use AI and shouldn't is when it comes to using generative AI for anything factual. In ETDD's policy we specifically state that we will not use generative AI for any form of data analysis (the tiny little robots know what a fact looks like, not what a fact is) because if you get the correct answer it will be because you got lucky.
 
-## Citing Generative AI {.scrollable .hidden}
+When using AI, you have to make sure you are still outputting something that is up to the quality standards. We tend to expect computers to be smarter/more competent than we are- I think most of us have typed something in Word and gotten a spell check error, and even if you were pretty confident you spelled it correctly you probably got out your dictionary to check. It is easy to think what the computer puts out is always better than what you would create; at an extreme this can include even things like trusting information you get from generative AI more than an expert, but it can also include not being as thorough when you fact check things you get from AI because it feels more trustworthy. This is part of why you have to check any information with verified sources (also because the little robots don't understand what a 'fact' is). If a model produces a bad result (e.g. bad image, inaccurate transcript, inaccurate information), you are responsible for anything that happens if you use it. AI is a tool and you are using it, it is not autonomous (yet)
 
-| Level of Use | Citation Required | Example |
-|----|----|----|
-| Fully AI Generated with no editing | Not Allowed |  |
-| Fully generative AI with minimal editing | “This \[document type\] was drafted with \[generative AI model\], and fact-checked and edited by ETDD staff” | “These meeting notes were drafted with CoPilot, and fact-checked and edited by ETDD staff” |
-|  A mixture of generative AI and original writing: |  “Some parts of this \[document\] were drafted with \[generative AI model\], and fact-checked and edited by ETDD staff” | “some parts of this plan were drafted with govAI, and fact- checked and edited by ETDD staff” |
-| Drafted with generative AI but fully edited | “\[Parts of\] this \[document type\] were drafted with \[ Generative AI model\], but the content has been written and edited by ETDD staff” | “Parts of this agenda were drafted with CoPilot, but the content has been written and edited by ETDD staff” |
-| If it is just edited (especially for a specific quality) with generative AI | “Parts of this \[document type\] were edited using \[ Generative AI model\] for \[quality\]” | “Parts of this email were edited using ChatGPT for tone” |
-|  |  |  |
+While it's less obvious when it's on the cloud (on someone else's computer), some AI models (generative AI in particular) use more resources than other options, and this sometimes translates to a higher cost to you. To be effective, you should balance your benefit with the increased resource use and try to find ways to reduce the increased resource use where possible.
+:::
 
 ## Practical Advice for Policies
 
@@ -534,11 +556,11 @@ Example using Effectiveness:
 -   Try to provide alternatives
 
 ::: notes
--   E.g. AI is often not just on your computer, most of the user-facing options are also online, so a policy about downloading things will have low relevance
-- Decide your risk level and how to handle things- I tend towards more cautious approaches because I am used to a production environment; you might feel differently
+If you have an AI incident, there is a chance it will be because someone accidentally signed up for an AI tool, or tried to disconnect it from their calendar but had a technical issue.
+You might be thinking that the way ETDD does things sounds like the best method, but if it involves any paperwork it will absolutely not happen at your district. If so, figure out how to adapt for your organization.
+You probably already have a tech policy, but your tech policy almost certainly does not cover everything you need. AI is often not just on your computer, most of the user-facing options are also online, so a policy about downloading things will have low relevance
+If you have to say no to something, try to understand the need to find a suitable alternative. That'll help address genuine needs and help improve buy-in to the policy.
 :::
-
-
 
 ## Putting It In Action / Hypotheticals
 
@@ -812,9 +834,6 @@ Not having a policy could make you more vulnerable to:
 
 :::
 ## Resources (ETDD's Policy)
-
-- Ask for a copy of our policy by emailing kcimino@etdd.org
-
 
 <embed title="ETDD's Policy" src="../commonFiles/ETDDAIPolicy.pdf" width="100%" height="70%" />
 

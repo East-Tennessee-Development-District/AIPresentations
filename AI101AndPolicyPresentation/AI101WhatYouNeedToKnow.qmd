@@ -411,8 +411,8 @@ We're in the middle of a boom of AI- lots of novel research is being done and ri
 
 ::: {.notes}
 
-We're already seeing decreasing returns on just adding more data, and now we've got issues where internet data is increasingly poisoned in a way that could lead to model collapse
-Most of the hype around AI is around LLMs and image generators, which are cool and also are not magic. There's a good chance as a society we will put all of our eggs into the LLMs are going to save us basket, and in a few years when we still have jobs people will lose interest.
+We're already seeing decreasing returns on just adding more data, and now we've got issues where internet data is increasingly poisoned in a way that could lead to model collapse.
+Most of the hype around AI is around LLMs and image generators, which are cool and also are not magic. There's a good chance as a society we will put all of our eggs into the 'LLMs are going to save us' basket, and in a few years when we still have jobs people will lose interest.
 Right now better computing has an upper limit in terms of resources available, and quantum computing is unlikely to save us soon (and poses its own issues)
 
 
@@ -446,6 +446,13 @@ Whether or not any existing AI can understand is a philosophical question that d
 - Lost of trust with communities
 - Loss of quality
 
+::: {.notes}
+Generative AI is subject to unique ways of hacking that traditional software is not, and cybersecurity experts are just starting to get a sense of the scope of the problem. One area of particular interest is with coding- if you use generative AI to code there are several ways it can pose cybersecurity risks that are elevated compared to coding by hand. Even if you don't open CoPilot and ask it to code for you, if you use low or no code tools, most of those use generative AI. 
+The legal realm around AI is currently rapidly changing and uncertain. A lot of where we're currently seeing these changes is with figuring out how current laws apply to new(er) AI tools. For example, multiple AI Notetakers are in court trying to determine things like if collecting biometric information without proper consent is breaking California privacy law, or if sending an AI notetaker to a meeting you don't attend might be breaking federal wire tap law.
+You could potentially use AI in a way that leads to a loss of trust with our communities, for example if you use generative AI to create incorrect statistics and use those in a grant and don't get the grant as a result, our communities might not want you to apply for grants any more.
+Due to automation bias, it's really easy to produce worse-quality material (e.g. a grant application) that you feel is better because it came from a more automated source.
+
+:::
 
 ## Ethics
 
@@ -466,8 +473,6 @@ In Data Science, a common refrain is garbage in garbage out. At an extreme, if a
 There are currently several court cases working to determine if training AI on copyrighted works without permission is considered fair use, and if there are instances where it might not be. Those cases could significantly impact many of the popular models today.
 
 Right now, public opinion is still highly polarized on AI. Some people have serious ethical concerns with how a lot of the larger LLM models have been trained or are being used (e.g. to replace workers), while others consider any use of AI to be inherently unethical. Navigating this landscape will require us to be aware of opinions and considerate of them even if we disagree with them (both pro- and anti- AI).
-
-When smartphones first started to become popular, part of the city I lived in had it so it was legal to use your phone while driving, but as soon as you crossed a bridge it had to be hands free. The solution most people ended up on was just only using it hands free most of the time so they didn't forget or not realize they were somewhere where it wasn't legal. This approach is similar to what we've adopted as an organization, especially when it comes to e.g. AI Notetakers (which might interact with people in a state with two party consent laws we don't want to break).
 
 :::
 

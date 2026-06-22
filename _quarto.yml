@@ -6,7 +6,7 @@ bibliography: commonFiles/references.bib
 csl: commonFiles/chicago-notes-intext-bibliography-access-dates.csl
 
 profile:
-  default: dev
+  default: prod
 
 format: 
   html:

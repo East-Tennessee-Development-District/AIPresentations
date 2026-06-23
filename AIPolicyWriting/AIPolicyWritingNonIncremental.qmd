@@ -1,0 +1,10 @@
+---
+title: "AI Policy"
+editor: source
+format:
+  revealjs:
+    incremental: false
+    notes: false
+---
+ 
+{{< include AIPolicyWriting.qmd >}}

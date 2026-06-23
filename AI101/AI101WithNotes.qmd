@@ -1,0 +1,8 @@
+---
+title: "AI 101"
+editor: source
+format:
+  revealjs: 
+    show-notes: true
+---
+{{< include AI101.qmd >}}

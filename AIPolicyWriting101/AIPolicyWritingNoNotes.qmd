@@ -1,7 +1,0 @@
----
-format:
-  revealjs: 
-    show-notes: false
----
-
-{{< include AIPolicyWriting.qmd >}}

@@ -12,15 +12,15 @@ Each of these presentations has additional accessibility options- press the `A` 
 ## AI 101 and AI Policy
 This is the training all ETDD staff receive
 
-[Presentation Version](AI101AndPolicyPresentation/AI101WhatYouNeedToKnowNoNotes.qmd)
+[Presentation Version](AI101/AI101NoNotes.qmd)
 
-[With Notes](AI101AndPolicyPresentation/AI101WhatYouNeedToKnow.qmd)
+[With Notes](AI101/AI101WithNotes.qmd)
 
 ## AI Policy Writing 101
 This presentation was given at the state-wide conference for development districts in 2026
 
-[Presentation Version](AIPolicyWriting101/AIPolicyWritingNoNotes.qmd)
+[Presentation Version](AIPolicyWriting/AIPolicyWritingNoNotes.qmd)
 
-[With Minimal Increments](AIPolicyWriting101/AIPolicyWritingNonIncremental.qmd)
+[With Minimal Increments](AIPolicyWriting/AIPolicyWritingNonIncremental.qmd)
 
-[With Notes](AIPolicyWriting101/AIPolicyWriting.qmd)
+[With Notes](AIPolicyWriting/AIPolicyWritingWithNotes.qmd)

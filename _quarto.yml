@@ -1,6 +1,13 @@
 project:
   output-dir: docs
   type: website
+  render:
+  - index.qmd
+  - AI101/AI101WithNotes.qmd
+  - AI101/AI101NoNotes.qmd
+  - AIPolicyWriting/AIPolicyWritingNoNotes.qmd
+  - AIPolicyWriting/AIPolicyWritingNonIncremental.qmd
+  - AIPolicyWriting/AIPolicyWritingWithNotes.qmd
 
 bibliography: commonFiles/references.bib  
 csl: commonFiles/chicago-notes-intext-bibliography-access-dates.csl
@@ -23,7 +30,6 @@ format:
     reference-location: document
     slide-number: true
     show-slide-number: print
-    show-notes: true
     embed-resources: true   
     subtitle: "What you need to know"
     fragment-in-url: true

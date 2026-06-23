@@ -3,6 +3,8 @@ ETDD*AIPolicy*.docx
 ETDD*AIPolicy*.pdf
 # misc files
 presentationFeedbackForm.pdf
+# dev site
+dev
 # History files
 .Rhistory
 .Rapp.history
@@ -43,9 +45,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-
-# pkgdown site
-docs/
 
 # translation temp files
 po/*~
